@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PortfoliosController < ApplicationController
   def index
     @portfolio_items = Portfolio.all
@@ -12,9 +14,9 @@ class PortfoliosController < ApplicationController
 
     respond_to do |format|
       if @portfolio_item.save
-        format.html {redirect_to portfolios_path, notice: 'Your portfolio item is now live.'}
+        format.html { redirect_to portfolios_path, notice: 'Your portfolio item is now live.' }
       else
-        format.html {render :new}
+        format.html { render :new }
       end
     end
   end
@@ -45,8 +47,7 @@ class PortfoliosController < ApplicationController
     @portfolio_item.destroy
 
     respond_to do |format|
-      format.html {redirect_to portfolios_url, notice: 'Portfolio item was removed'}
+      format.html { redirect_to portfolios_url, notice: 'Portfolio item was removed' }
     end
   end
-
 end
